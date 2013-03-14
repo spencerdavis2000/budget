@@ -1,4 +1,4 @@
-#This project was inspired by looking at my bank account and wondering,[*where all the money was going.*]
+#This project was inspired by looking at my bank account and wondering,''where all the money was going.''
 	
 	So, I go to my chase account and download the CSV file
 
