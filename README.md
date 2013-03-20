@@ -4,7 +4,7 @@
 
 It is usually the the following format:
 	
-		kind, date, description, amount, how_paid, balance
+#kind, date, description, amount, how_paid, balance
 
 		Basically we will search for something.  When we find it, we
 		will list all the transactions as well as amounts and totals.
@@ -16,3 +16,4 @@ It is usually the the following format:
 
 		This knowledge will help make better descisions and perhaps 
 			Save More Money:-) 
+
