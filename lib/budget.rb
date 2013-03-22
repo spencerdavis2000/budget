@@ -40,11 +40,14 @@ class Budget
 		@matched_list.each_pair do |key, value|
 			total = []
 			@matched_list[key].each do |value|
-				total << value
+				total << value.to_f
 			end
-			@totaled_list[key] = total.inject{|x,y| x.to_f + y.to_f}.round(2)
+			@totaled_list[key] = total.inject{|x,y| x + y}.round(2)
 		end
 		nil #just so it does not return anything
+	end
+	def show
+		@totaled_list
 	end
 end
 
