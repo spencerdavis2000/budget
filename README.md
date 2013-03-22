@@ -42,5 +42,6 @@ It is usually the the following format:
 	$budget.total
 	$budget.show
 		here you will get the output of the transactions totaled.
-#Basically, this is a good way to keep an eye on how much money is being spent at a specific store(s), and therefore being a useful tool.  The bank allows you to only search by amount and not by "store name".  Other tools might also be useful, but I think they also tend to focus on categorizing transactions into categorize like consumer goods, etc.. Therefore, for my purposes, this is much more accurate and exactly what I needed -- which is why I created it :-)  
+		
+Basically, this is a good way to keep an eye on how much money is being spent at a specific store(s), and therefore being a useful tool.  The bank allows you to only search by amount and not by "store name".  Other tools might also be useful, but I think they also tend to focus on categorizing transactions into categorize like consumer goods, etc.. Therefore, for my purposes, this is much more accurate and exactly what I needed -- which is why I created it :-)  
 
