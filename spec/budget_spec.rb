@@ -2,7 +2,7 @@ require 'budget'
 
 describe Budget do 
 
-	it "should be able to parse the csv file" do
+	it "should be able to load the csv file" do
 		file = "./documents/budget.csv"
 		open = Budget.new
 		open.read(file)
