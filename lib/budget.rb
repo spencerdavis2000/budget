@@ -1,7 +1,8 @@
 require 'pry'
 class Budget
 	attr_accessor :result, :date, :description, 
-				  :amount, :matched_list, :totaled_list
+				  :amount, :matched_list, :totaled_list, 
+				  :set_columns
 
 	def initialize
 		@date = ""
@@ -10,6 +11,33 @@ class Budget
 		@result = Hash.new {|k,v| k[v] = [] }
 		@matched_list = Hash.new {|k,v| k[v] = [] }
 		@totaled_list = {}
+		@set_columns = []
+	end
+	def input
+		message = {0 => "Enter description column: ", 
+				   1 => "Enter amount column: "}
+		2.times do |i|
+			input_values = false
+			while !input_values
+				
+				print message[i]
+				@set_columns[i] = gets.chomp
+				
+				if !valid?(@set_columns[i])
+					puts "Integers only please"
+					input_values = false
+				else
+					input_values = true
+				end
+			end
+		end
+	end
+	def valid?(input)
+		if !input.match(/\A\d+\z/)
+			false
+		else
+			true
+		end
 	end
 	def read(file)
 		row = 0

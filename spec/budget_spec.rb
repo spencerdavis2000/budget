@@ -2,6 +2,9 @@ require 'budget'
 
 describe Budget do 
 
+	it "should be able to read your input" do
+		pending
+	end
 	it "should be able to load the csv file" do
 		file = "./documents/budget.csv"
 		open = Budget.new
