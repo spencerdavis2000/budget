@@ -1,11 +1,10 @@
 require 'pry'
 class Budget
-	attr_accessor :result, :date, :description, 
+	attr_accessor :result, :description, 
 				  :amount, :matched_list, :totaled_list, 
 				  :set_columns
 
 	def initialize
-		@date = ""
 		@description = ""
 		@amount = ""
 		@result = Hash.new {|k,v| k[v] = [] }
@@ -44,13 +43,12 @@ class Budget
 		File.open(file, "r") do |handle|
 			handle.each_line do |line|
 				column = line.split(",")
-				@date = column[1]
-				@description = column[2]
+				@description = column[@set_columns[0].to_i]
 				@description = @description.split(" ")
 				@description = @description.join(" ")
-				@description = @description[/[\w\s\/]+/]
-				@amount = column[3]
-				result[row] << @date << @description << @amount
+				@description = @description[/[\w\s\/*]+/]
+				@amount = column[@set_columns[1].to_i]
+				result[row] << @description << @amount
 				row += 1
 			end
 		end
@@ -58,8 +56,8 @@ class Budget
 	def search(input)
 		input = input.downcase
 		@result.keys.each do |key|
-			if @result[key][1].downcase.match(input)
-				@matched_list[@result[key][1]] << @result[key][2]
+			if @result[key][0].downcase.match(input)
+				@matched_list[@result[key][0]] << @result[key][1]
 			end
 		end
 		nil #just so it does not return anything.
