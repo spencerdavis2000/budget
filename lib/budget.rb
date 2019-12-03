@@ -28,10 +28,14 @@ class Budget
 		end
 	end
 	def search(input)
-		input = input.downcase
-		@result.keys.each do |key|
-			if @result[key][1].downcase.match(input)
-				@matched_list[@result[key][1]] << @result[key][2]
+		if not @matched_list.empty?
+			@matched_list = Hash.new {|k,v| k[v] = [] }
+		else 
+			input = input.downcase
+			@result.keys.each do |key|
+				if @result[key][1].downcase.match(input)
+					@matched_list[@result[key][1]] << @result[key][2]
+				end
 			end
 		end
 		nil #just so it does not return anything.
